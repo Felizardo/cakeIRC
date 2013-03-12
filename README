@@ -1,0 +1,12 @@
+=== Objective ===
+Make an IRC client that delivers the best user experience. It should be simple as cake. 
+
+=== Ideas ====
+Use: GWT and comet.
+
+-> The program focus should be in the channels, not in servers.
+-> Easy channel search with IRC++
+-> Option to enter in channels at different networks without needing to split all the interface.
+-> Allow users to have avatars, send images, personalize the channel with IRC++
+-> Integrate with facebook, twitter etc.
+-> Automate and integrate with the GUI services like Nickserver, Chanserver, Memoserver and etc.
