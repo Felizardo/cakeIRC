@@ -31,25 +31,19 @@ Kandan, Ballons.io seems to have all features I want, but it doesn't connect to 
 http://www.thedjpetersen.com/blog/comparing_webchat_options/
 
 === LIBRARY ===
-Main framework: GWT
+GUI framework: GWT
 
--> gwt-comet
-GWT SERVER and CLIENT side comet implementation
-https://code.google.com/p/gwt-comet/
+Interfacing with server: 
+Using pure websockets wrapper. I think websockets is mature enough to use on its own.
 
--> gwt-ws
-GWT SERVER and CLIENT side WEBSOCKET implementation
-https://code.google.com/p/gwt-ws/
+Server-side:
+Thinking about using python because its fun. 
+This will allow the interface between server and client as clear as possible (NO JAVA RPC CALLS)
+Websockets server implementation:
+https://github.com/Lawouach/WebSocket-for-Python/
 
--> node-irc
-SERVER-SIDE Javascript library to IRC protocol.
-https://github.com/martynsmith/node-irc
-
--> socket.io
-Javascript SERVER and CLIENT-SIDE librry for emulating sockets.
-http://socket.io/
 
 === DESIGN DECISIONS ===
 -> Use MVC, and create a special layer to the connection (socket etc.)
 
--> It seems that everybody likes to log all conversations in a channel. This can be done as an optional plugin to our application...
+-> It seems that everybody likes to log all conversations in a channel. This will be implemented in the standalone version.
