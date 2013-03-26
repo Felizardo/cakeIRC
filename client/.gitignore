@@ -1,0 +1,15 @@
+*.class
+
+# Package Files #
+*.jar
+*.rpc
+.*
+!.gitignore
+
+# gwt caches and compiled units #
+cakeIRC/war/cakeirc/gwt/
+gwt-unitCache
+
+# more caches and things from deploy #
+cakeIRC/war/WEB-INF/classes
+cakeIRC/war/WEB-INF/deploy
