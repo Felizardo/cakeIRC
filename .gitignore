@@ -1,7 +1,9 @@
 *.class
 *~
+*.class
 
-# Package Files #
-*.jar
-*.war
-*.ear
+gwt-unitCache
+gwt
+classes
+deploy
+

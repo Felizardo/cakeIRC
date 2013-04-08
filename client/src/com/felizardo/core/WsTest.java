@@ -38,7 +38,7 @@ public class WsTest extends Composite implements HasText {
 			@Override
 			public void onClick(ClickEvent event) {
 				if (!isConnected) {
-					webSocket =WebSocket.create("ws://echo.websocket.org");
+					webSocket =WebSocket.create("ws://127.0.0.1:9000/ws");
 					statusEcho("Trying to connect...");
 					//On Open...
 					webSocket.setOnOpen(new OpenHandler() {
