@@ -13,7 +13,7 @@ public class CakeIRC implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
-		WsTest test = new WsTest();
+		JerkTest test = new JerkTest();
 		RootPanel.get().add(test);
 	}
 }

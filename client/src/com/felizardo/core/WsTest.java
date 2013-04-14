@@ -19,6 +19,7 @@ import net.zschech.gwt.websockets.client.MessageHandler;
 import net.zschech.gwt.websockets.client.OpenHandler;
 import net.zschech.gwt.websockets.client.WebSocket;
 
+
 public class WsTest extends Composite implements HasText {
 
 	private WebSocket webSocket;
@@ -38,8 +39,9 @@ public class WsTest extends Composite implements HasText {
 			@Override
 			public void onClick(ClickEvent event) {
 				if (!isConnected) {
-					webSocket =WebSocket.create("ws://127.0.0.1:9000/ws");
-					statusEcho("Trying to connect...");
+					webSocket =WebSocket.create("ws://127.0.0.1:9999/irc.freenode.net:6667");
+					//webSocket =WebSocket.create("ws://echo.websocket.org");
+					statusEcho("Trying to connect... ");
 					//On Open...
 					webSocket.setOnOpen(new OpenHandler() {
 						

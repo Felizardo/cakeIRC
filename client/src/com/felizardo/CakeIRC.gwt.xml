@@ -25,6 +25,12 @@
   <entry-point class='com.felizardo.core.CakeIRC'/>
 
   <!-- Specify the paths for translatable code                    -->
+  <source path='jerklib'/>
+  <source path='jerklib.events'/>
+  <source path='jerklib.listeners'/>
+  <source path='jerklib.parsers'/>
+  <source path='jerklib.tasks'/>
   <source path='core'/>
+  
 
 </module>

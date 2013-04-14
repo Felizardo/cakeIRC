@@ -24,14 +24,17 @@ class IRCSocket (object):
         self.thread=thread.start_new_thread(self.loop,())
         
     def loop(self):
-        while self.connected:
+        while True:
             try:
                 data=self.conn.recv(512)
-                if not self.connect: 
+                if not self.connected:
+                    self.conn.close()
                     return
                 if not data: #Disconnected
                     print 'NO MORE DATA'
                     self.close()
+                    return
+                #In this case it is OKAY
                 self.ws.write_message(data)
             except socket.error as e:
                 print 'LOOP SOCKET ERROR: '.format(e.errno, e.strerror)
@@ -47,8 +50,6 @@ class IRCSocket (object):
             self.close()
             
     def close(self):
-        if self.connected:
-            self.conn.close()
         self.connected=False
         try:
             self.ws.close()
@@ -56,30 +57,24 @@ class IRCSocket (object):
             pass
 
 class WSHandler(tornado.websocket.WebSocketHandler):
-    def open(self):
-        print 'new connection'
+    def open(self, host, port):
+        print 'new connection host: '+host+' port: '+port
         self.ircSocket = IRCSocket(self)
-        self.write_message("Hello World")
+        print 'trying to connect'
+        self.ircSocket.connect(host, int(port))
+        self.ircSocket.listen()
       
     def on_message(self, message):
         print 'message received %s' % message
-        if message.startswith("cake"):
-            splitedMsg = message.split(' ')
-            if len(splitedMsg) == 4 and splitedMsg[1]=='connect':
-                print 'trying to connect'
-                self.ircSocket.connect(splitedMsg[2], int(splitedMsg[3]))
-                self.ircSocket.listen()
-                
-        else:
-            self.ircSocket.send(message)
-                
+        self.ircSocket.send(message)
+
     def on_close(self):
         self.ircSocket.close()
         print 'connection closed'
  
  
 application = tornado.web.Application([
-    (r'/ws', WSHandler),
+    (r'/(?P<host>[^:/]+):(?P<port>[^:/]+)', WSHandler)
 ])
  
  
