@@ -7,7 +7,7 @@
   
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>CakeIRC.html</welcome-file>
+    <welcome-file>jerklib_gwt.html</welcome-file>
   </welcome-file-list>
 
 </web-app>

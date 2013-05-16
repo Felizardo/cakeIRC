@@ -16,7 +16,6 @@ import net.zschech.gwt.websockets.client.CloseHandler;
 import net.zschech.gwt.websockets.client.ErrorHandler;
 import net.zschech.gwt.websockets.client.MessageEvent;
 import net.zschech.gwt.websockets.client.MessageHandler;
-import net.zschech.gwt.websockets.client.OpenHandler;
 import net.zschech.gwt.websockets.client.WebSocket;
 
 
@@ -43,14 +42,14 @@ public class WsTest extends Composite implements HasText {
 					//webSocket =WebSocket.create("ws://echo.websocket.org");
 					statusEcho("Trying to connect... ");
 					//On Open...
-					webSocket.setOnOpen(new OpenHandler() {
+					/*webSocket.setOnOpen(new OpenHandler() {
 						
 						@Override
 						public void onOpen(WebSocket webSocket) {
 							statusEcho("CONNECTED!!!");
 							isConnected=true;
 						}
-					});
+					});*/
 					
 					//On Close...
 					webSocket.setOnClose(new CloseHandler() {
