@@ -5,4 +5,6 @@ http://jerklib.sourceforge.net/
 
 Jerklib_gwt will be used in a gwt irc client, cakeIRC, but can be useful for other projects too.
 
-All the communication is done using raw HTML5 websockets, and it  also includes a simple python websocket proxy server. 
+All the communication is done using raw HTML5 websockets, and it  also includes a simple python websocket proxy server.
+
+LICENSE IS GPLv3
