@@ -1,49 +1,5 @@
-=== Objective ===
-Make an IRC client that delivers the best user experience. It should be simple as cake. 
+This project has the purpose to port the Jerklib Java Library (an IRC library) to work with Google WebToolkit.
 
-=== Ideas ====
-Use: GWT and socket.io.
+Jerklib_gwt will be used in a gwt irc client, cakeIRC, but can be useful for other projects too.
 
--> The program focus should be in the channels, not in servers.
--> Easy channel search with IRC++
--> Option to enter in channels at different networks without needing to split all the interface.
--> Allow users to have avatars, send images, personalize the channel with IRC++
--> Integrate with facebook, twitter etc.
--> Automate and integrate with the GUI services like Nickserver, Chanserver, Memoserver and etc.
-
-=== RESEARCH ===
-
-=== OTHER WEB CLIENTS ===
-
--> Kiwi IRC (Seems to use socket.io)
-https://github.com/prawnsalad/KiwiIRC/
-
--> Subway
-Very neat web client. Seems to be the closest of what I expect from cakeIRC so far.
-https://github.com/thedjpetersen/subway
-
--> QWebIRC
-Simple web client. It is the standard for quakenet and freenode.
-http://qwebirc.org/
-
--> OTHERS webchats (not necessary IRC)
-Kandan, Ballons.io seems to have all features I want, but it doesn't connect to IRC.
-http://www.thedjpetersen.com/blog/comparing_webchat_options/
-
-=== LIBRARY ===
-GUI framework: GWT
-
-Interfacing with server: 
-Using pure websockets wrapper. I think websockets is mature enough to use on its own.
-
-Server-side:
-Thinking about using python because its fun. 
-This will allow the interface between server and client as clear as possible (NO JAVA RPC CALLS)
-Websockets server implementation:
-https://github.com/Lawouach/WebSocket-for-Python/
-
-
-=== DESIGN DECISIONS ===
--> Use MVC, and create a special layer to the connection (socket etc.)
-
--> It seems that everybody likes to log all conversations in a channel. This will be implemented in the standalone version.
+All the communication is done using raw HTML5 websockets, and it  also includes a simple python websocket proxy server. 
