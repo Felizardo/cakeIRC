@@ -1,10 +1,12 @@
-This project has the purpose to port the Jerklib Java Library (an IRC library) to work with Google WebToolkit.
+This project has the purpose to port the Jerklib Java Library (an IRC library) to Google WebToolkit.
 
 See all Jerklib documentation in
 http://jerklib.sourceforge.net/
 
 Jerklib_gwt will be used in a gwt irc client, cakeIRC, but can be useful for other projects too.
 
-All the communication is done using raw HTML5 websockets, and it  also includes a simple python websocket proxy server.
+All the communication is done using raw HTML5 websockets. To allow the access to IRC networks, it is necessary to use a websockets proxy. A simple one was developed in python and is included on the server directory.
+
+Thanks to the jerklib developers for the very well structured library :)
 
 LICENSE IS GPLv3
